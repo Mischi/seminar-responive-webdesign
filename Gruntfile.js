@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 
         regarde: {
             fred: {
-                files: ['index.html', 'css/*.css'],
+                files: ['index.html', 'css/*.css', 'images/*'],
                 tasks: ['livereload']
             }
         }

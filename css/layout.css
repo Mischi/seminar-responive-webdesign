@@ -1,0 +1,165 @@
+/**********************************************************************************/
+/* COLORS */
+
+bagred: #903
+lightgrey: #F8F8F8
+darkgrey: #8B8B8B
+
+/* COLORS END */
+/**********************************************************************************/
+
+
+
+/**********************************************************************************/
+/* FONT SETTINGS */
+
+body { font-family: Verdana, Geneva, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 { font-family: Georgia, Times, "Times New Roman", serif; }
+
+/* FONT SETTINGS END */
+/**********************************************************************************/
+
+
+
+/**********************************************************************************/
+/* TOP NAVIGATION */
+
+body { 
+	margin-top: 3em; /* make some room for navigation */
+}
+
+.nav-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 3em;
+
+	background-color: #8B8B8B;
+
+	border-bottom: 3px solid #903;
+}
+
+nav {
+	display: -webkit-flex;
+	display: flex;
+
+	height: 100%;
+	max-width: 1200px;
+
+	margin: 0 auto;
+	padding: 0 20px;
+}
+	
+	nav h1 {
+		-webkit-flex: 1;
+		felx: 1;
+
+		margin: 0;
+
+		font-size: 150%;
+		text-align: center;
+		line-height: 2em;
+	}
+
+	nav ul {
+		display: -webkit-flex;
+		display: flex;
+
+		-webkit-justify-content: center;
+		justify-content: center;
+
+		-webkit-flex: 3;
+		flex: 3;
+
+		height: 100%;
+		width: 100%;
+
+		margin: 0;
+		padding: 0;
+
+	}
+
+		nav li {
+			list-style-type: none;
+		}
+
+		nav li:hover {
+			background-color: #903;
+		}
+
+		nav li#labs { width: 7em; }
+		nav li#wirsuchen { width: 8em; }
+		nav li#mitwirkende { width: 8em; }
+		nav li#kontakt { width: 7em; }
+
+			nav a {
+				display: block;
+
+				width: 100%;
+				height: 100%;
+
+				/* center text */
+				text-align: center;
+				line-height: 3em; /* nav height */
+
+				list-style-type: none;
+				text-decoration: none;
+				color: #fff;
+			}
+
+
+/* TOP NAVIGATION END */
+/**********************************************************************************/
+
+
+
+/**********************************************************************************/
+/* HEADER */
+
+#header {
+	min-height: 700px;
+
+
+	background-image: url('../images/schulung.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: top;
+}
+
+#header > header { 
+	max-width: 1200px;
+
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#header p {
+	font-size: 300%;
+	text-align: center;
+	color: #fff;
+}
+
+/* HEADER END */
+/**********************************************************************************/
+
+
+
+.container { background-color: #F8F8F8; }
+
+.container.dark { background-color: #8B8B8B; }
+
+.container > section {
+	min-height: 700px;
+	max-width: 1200px;
+
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.container > section > h2 { font-size: 200%; }	
+
+.container > section > h2 { color: #000; }
+.container.dark > section > h2 { color: #F8F8F8; }
