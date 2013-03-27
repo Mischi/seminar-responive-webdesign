@@ -9,6 +9,15 @@ var folderMount = function folderMount(connect, point) {
 
 module.exports = function (grunt) {
      grunt.initConfig({
+        clean: {
+          dev: ['css']
+        },
+
+        compass: {
+          dev: {
+            config: 'config.rb'
+          }
+        },
 
         connect: {
           livereload: {
@@ -23,8 +32,8 @@ module.exports = function (grunt) {
 
         regarde: {
             fred: {
-                files: ['index.html', 'css/*.css', 'images/*'],
-                tasks: ['livereload']
+                files: ['index.html', 'sass/*.scss', 'images/*'],
+                tasks: ['compass:dev', 'livereload']
             }
         }
     });
@@ -32,6 +41,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-regarde');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-livereload');
+    grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.registerTask('default', ['livereload-start', 'connect', 'regarde']);
+    grunt.registerTask('build', ['clean', 'compass']);
 };

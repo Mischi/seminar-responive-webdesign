@@ -1,0 +1,83 @@
+@import "shared";
+
+$navheight: 3em;
+
+body { margin-top: $navheight; /* make some room for navigation */ }
+
+.nav-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: $navheight;
+
+	background-color: $darkgrey;
+
+	border-bottom: 3px solid $bagred;	
+
+	nav {
+		@include centered;
+		
+		display: -webkit-flex;
+		display: flex;
+
+		height: 100%;
+	
+		padding: 0 20px;
+
+		h1 {
+			-webkit-flex: 1;
+			felx: 1;
+
+			margin: 0;
+
+			font-size: 150%;
+			text-align: center;
+			line-height: 2em;
+		}
+
+		ul {
+			display: -webkit-flex;
+			display: flex;
+
+			-webkit-justify-content: center;
+			justify-content: center;
+
+			-webkit-flex: 3;
+			flex: 3;
+
+			height: 100%;
+			width: 100%;
+
+			margin: 0;
+			padding: 0;
+
+			li {
+				list-style-type: none;
+
+				&:hover { background-color: $bagred }
+
+				&#labs { width: 7em; }
+				&#wirsuchen { width: 8em; }
+				&#mitwirkende { width: 8em; }
+				&#kontakt { width: 7em; }
+
+				a {
+					display: block;
+
+					width: 100%;
+					height: 100%;
+
+					/* center text */
+					text-align: center;
+					line-height: $navheight; /* nav height */
+
+					list-style-type: none;
+					text-decoration: none;
+					color: #fff;
+				}
+			}
+		}
+	}
+}

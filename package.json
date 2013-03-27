@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "description": "Seminar Responive Webdesign - CSS Transitions und Animations",
   "dependencies": {
+  },
+  "devDependencies": {
     "grunt": "~0.4.0",
     "grunt-contrib-livereload": "~0.1.2",
     "grunt-contrib-connect": "*",
     "grunt-regarde": "~0.1.1"
+    "grunt-contrib-compass": "~0.1.3"
   },
-  "devDependencies": {},
   "author": "Fabian Raetz",
   "license": "BSD"
 }

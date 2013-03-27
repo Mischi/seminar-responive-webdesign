@@ -1,0 +1,51 @@
+@import "compass/reset";
+@import "shared";
+@import "topnav";
+
+
+
+
+
+body { font-family: Verdana, Geneva, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 { font-family: Georgia, Times, "Times New Roman", serif; }
+
+
+
+#header {
+	min-height: 700px;
+
+
+	background-image: url('../images/schulung.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: top;
+
+	header { 
+		@include centered;
+
+		p {
+			font-size: 300%;
+			text-align: center;
+			color: #fff;
+		}
+	}
+}
+
+
+.container { 
+	background-color: #F8F8F8; 
+	&.dark { background-color: #8B8B8B; }
+
+	section {
+		@include centered;
+		
+		min-height: 700px;
+
+		h2 {
+			font-size: 200%;
+			color: #000;
+			/*.container.dark & { color: #F8F8F8; }*/
+		}
+	}
+}
