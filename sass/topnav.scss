@@ -1,3 +1,5 @@
+/* http://www.w3.org/TR/css3-flexbox/ */
+
 @import "shared";
 
 $navheight: 3em;
@@ -12,7 +14,7 @@ body { margin-top: $navheight; /* make some room for navigation */ }
 	width: 100%;
 	height: $navheight;
 
-	background-color: $darkgrey;
+	background-color: $lightgrey;
 
 	border-bottom: 3px solid $bagred;	
 
@@ -27,13 +29,13 @@ body { margin-top: $navheight; /* make some room for navigation */ }
 		padding: 0 20px;
 
 		h1 {
-			-webkit-flex: 1;
-			felx: 1;
+			-webkit-flex: 1.5;
+			felx: 1.5;
 
 			margin: 0;
 
 			font-size: 150%;
-			text-align: center;
+			text-align: left;
 			line-height: 2em;
 		}
 
@@ -75,8 +77,10 @@ body { margin-top: $navheight; /* make some room for navigation */ }
 
 					list-style-type: none;
 					text-decoration: none;
-					color: #fff;
+					color: $darkgrey;
 				}
+
+				& a:hover {	color: #fff; }
 			}
 		}
 	}

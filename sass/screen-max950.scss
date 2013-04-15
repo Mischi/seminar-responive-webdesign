@@ -1,0 +1,11 @@
+@media (max-width: 950px) {
+	.nav-container nav {
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+		-webkit-flex-direction: column;
+		flex-direction: column;
+
+		h1 { text-align: center; }
+	}
+} 

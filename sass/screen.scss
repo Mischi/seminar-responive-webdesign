@@ -2,8 +2,10 @@
 @import "shared";
 @import "topnav";
 
+@import "screen-max950";
 
 
+$containerHeight: 700px;
 
 
 body { font-family: Verdana, Geneva, sans-serif; }
@@ -13,13 +15,13 @@ h1, h2, h3, h4, h5, h6 { font-family: Georgia, Times, "Times New Roman", serif; 
 
 
 #header {
-	min-height: 700px;
+	min-height: $containerHeight;
 
 
 	background-image: url('../images/schulung.jpg');
 	background-repeat: no-repeat;
-	background-size: 100%;
-	background-position: top;
+	background-size: auto;
+	background-position: center;
 
 	header { 
 		@include centered;
@@ -34,18 +36,23 @@ h1, h2, h3, h4, h5, h6 { font-family: Georgia, Times, "Times New Roman", serif; 
 
 
 .container { 
-	background-color: #F8F8F8; 
-	&.dark { background-color: #8B8B8B; }
+	background-color: #fff; 
+	&.dark { background-color: $darkgrey; }
 
 	section {
-		@include centered;
-		
-		min-height: 700px;
+		@include centered;	
+		min-height: $containerHeight;
 
 		h2 {
 			font-size: 200%;
 			color: #000;
-			/*.container.dark & { color: #F8F8F8; }*/
 		}
+	}
+
+	footer {
+		@include centered;		
+		min-height: 1em;
+
+		p { line-height: 1em;}
 	}
 }
