@@ -12,7 +12,9 @@ logs
 results
 node_modules
 components
+dist
 .sass-cache
 css
 
 npm-debug.log
+seminar-responseweb-fabianraetz.zip
