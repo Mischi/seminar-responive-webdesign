@@ -5,9 +5,9 @@ app = (function(skrollr) {
 	var navLinks = document.querySelectorAll('.nav-container li');
 
 	function navigateTo() {
-		[].forEach.call(navLinks, function(navLink) {
-			navLink.classList.remove('active');
-		});
+		for (var i = 0; i < navLinks.length; i++) {
+			navLinks[i].classList.remove('active');
+		};
 		this.classList.add('active');
 	}
 
@@ -20,9 +20,9 @@ app = (function(skrollr) {
 			skrollr.menu.init(s);
 		},
 		initMenu: function() {
-			[].forEach.call(navLinks, function(navLink) {
-				navLink.addEventListener('click', navigateTo);
-			});
+			for (var i = 0; i < navLinks.length; i++) {
+				navLinks[i].addEventListener('click', navigateTo);
+			};
 		}
 	};
 
