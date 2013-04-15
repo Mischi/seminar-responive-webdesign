@@ -1,0 +1,7 @@
+{
+  "name": "seminar-responive-webdesign",
+  "version": "0.0.1",
+  "dependencies": {
+    "skrollr": "~0.5.13"
+  }
+}
