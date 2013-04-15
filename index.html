@@ -20,6 +20,7 @@
 				<nav>
 					<h1>BROCKHAUS AG Labs</h1>
 					<ul>
+						<li id="nav-home" class="active"><a href="#home">Home</a></li>
 						<li id="nav-labs"><a href="#labs">Über Labs</a></li>
 						<li id="nav-wirsuchen"><a href="#wirsuchen">Wir Suchen</a></li>
 						<li id="nav-mitwirkende"><a href="#mitwirkende">Mitwirkende</a></li>
@@ -29,7 +30,7 @@
 			</div>
 
 			<div id="header">
-				<header>
+				<header id="home">
 					<div class="hero">
 						<p>Mit Visionen und Teamwork zu <br /> innovativen Projekten</p>
 					</div>
@@ -88,18 +89,8 @@
 
 		<!--[if lt IE 9]>
 		<script type="text/javascript" src="components/skrollr/dist/skrollr.ie.min.js"></script>
-		<![endif]-->
+		<![endif]-->	
 
-		<script type="text/javascript">	
-
-			window.onload = function() {
-				var s = skrollr.init({
-					forceHeight: false
-				});
-
-				skrollr.menu.init(s);
-			}
-	
-		</script>	
+		<script type="text/javascript" src="js/site.js"></script>
 	</body>
 </html>

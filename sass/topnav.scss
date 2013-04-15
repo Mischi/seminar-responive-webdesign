@@ -58,8 +58,10 @@ body { margin-top: $navheight; /* make some room for navigation */ }
 			li {
 				list-style-type: none;
 
-				&:hover { background-color: $bagred }
+				&:hover,
+				&.active { background-color: $bagred }
 
+				&#nav-home { width: 6em; }
 				&#nav-labs { width: 7em; }
 				&#nav-wirsuchen { width: 8em; }
 				&#nav-mitwirkende { width: 8em; }
@@ -80,7 +82,8 @@ body { margin-top: $navheight; /* make some room for navigation */ }
 					color: $darkgrey;
 				}
 
-				& a:hover {	color: #fff; }
+				&:hover a,
+				&.active a { color: #fff; }
 			}
 		}
 	}
