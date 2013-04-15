@@ -1,5 +1,7 @@
 /* http://www.w3.org/TR/css3-flexbox/ */
 
+@import "compass/css3/transition";
+
 @import "shared";
 
 $navheight: 3em;
@@ -56,6 +58,8 @@ body { margin-top: $navheight; /* make some room for navigation */ }
 			padding: 0;
 
 			li {
+				@include transition(background-color .8s, color .8s);
+
 				list-style-type: none;
 
 				&:hover,
