@@ -60,10 +60,10 @@ body { margin-top: $navheight; /* make some room for navigation */ }
 
 				&:hover { background-color: $bagred }
 
-				&#labs { width: 7em; }
-				&#wirsuchen { width: 8em; }
-				&#mitwirkende { width: 8em; }
-				&#kontakt { width: 7em; }
+				&#nav-labs { width: 7em; }
+				&#nav-wirsuchen { width: 8em; }
+				&#nav-mitwirkende { width: 8em; }
+				&#nav-kontakt { width: 7em; }
 
 				a {
 					display: block;
