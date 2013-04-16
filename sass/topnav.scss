@@ -1,7 +1,6 @@
 /* http://www.w3.org/TR/css3-flexbox/ */
 
 @import "compass/css3/transition";
-
 @import "shared";
 
 $navheight: 3em;
@@ -13,9 +12,9 @@ $navheight: 3em;
 
 	width: 100%;
 	height: $navheight;
+	z-index: 100;
 
 	background-color: $lightgrey;
-
 	border-bottom: 3px solid $bagred;	
 
 	nav {
@@ -65,6 +64,7 @@ $navheight: 3em;
 
 				&#nav-home { width: 6em; }
 				&#nav-labs { width: 7em; }
+				&#nav-ziele { width: 5em; }
 				&#nav-wirsuchen { width: 8em; }
 				&#nav-mitwirkende { width: 8em; }
 				&#nav-kontakt { width: 7em; }
