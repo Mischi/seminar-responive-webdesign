@@ -6,8 +6,6 @@
 
 $navheight: 3em;
 
-body { margin-top: $navheight; /* make some room for navigation */ }
-
 .nav-container {
 	position: fixed;
 	top: 0;
@@ -32,7 +30,7 @@ body { margin-top: $navheight; /* make some room for navigation */ }
 
 		h1 {
 			-webkit-flex: 1.5;
-			felx: 1.5;
+			flex: 1.5;
 
 			margin: 0;
 
