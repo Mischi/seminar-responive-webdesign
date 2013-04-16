@@ -7,7 +7,7 @@
 @import "screen-max950";
 
 
-$containerHeight: 700px;
+$containerHeight: 900px;
 
 
 * { @include box-sizing("border-box"); }
@@ -22,19 +22,13 @@ h1, h2, h3, h4, h5, h6 { font-family: Georgia, Times, "Times New Roman", serif; 
 #header {
 	min-height: $containerHeight;
 
-
-	background-image: url('../images/schulung.jpg');
-	background-repeat: no-repeat;
-	background-size: auto;
-	background-position: center;
-
 	header { 
 		@include centered;
 
 		p {
 			font-size: 300%;
 			text-align: center;
-			color: #fff;
+			color: $darkgrey;
 		}
 	}
 }
