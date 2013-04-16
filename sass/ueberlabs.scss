@@ -1,4 +1,8 @@
+@import "compass/css3/transform";
+
 @import "shared";
+@import "circlehover-grid";
+
 
 #labs section {
 
@@ -8,10 +12,17 @@
 	display: -webkit-flex;
 	display: flex;
 
-	.first, .second {
+	.first {
 		-webkit-flex: 1.5;
 		flex: 1.5;
 	}
 
-	border: 1px solid $darkgrey;
+	.second {
+		-webkit-flex: 1;
+		flex: 1;
+	}
+
+	.ch-grid li:first-child {
+		@include translate(100px, -200px);
+	}
 }

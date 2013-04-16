@@ -91,15 +91,15 @@ $navheight: 3em;
 				&.active a { 
 					color: #fff;
 
-					-webkit-animation: moveFromTop .2s ease-in-out;
-					animation: moveFromTop .2s ease-in-out;
+					//-webkit-animation: moveFromTop .2s ease-in-out;
+					//animation: moveFromTop .2s ease-in-out;
 				}
 			}
 		}
 	}
 }
 
-
+/*
 @-webkit-keyframes moveFromTop {
 	from {
 		-webkit-transform: translateY(-200%);
@@ -109,4 +109,4 @@ $navheight: 3em;
 		-webkit-transform: translateY(0%);
 		transform: translateY(0%);
 	}
-}
+}*/
