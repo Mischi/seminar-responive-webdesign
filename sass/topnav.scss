@@ -55,12 +55,14 @@ $navheight: 3em;
 			padding: 0;
 
 			li {
-				@include transition(background-color .8s, color .8s);
+				@include transition(all .8s ease-in-out);
 
 				list-style-type: none;
 
 				&:hover,
-				&.active { background-color: $bagred }
+				&.active { 
+					background-color: $bagred;
+				}
 
 				&#nav-home { width: 6em; }
 				&#nav-labs { width: 7em; }
@@ -81,12 +83,30 @@ $navheight: 3em;
 
 					list-style-type: none;
 					text-decoration: none;
+					font-weight: bold;
 					color: $darkgrey;
 				}
 
 				&:hover a,
-				&.active a { color: #fff; }
+				&.active a { 
+					color: #fff;
+
+					-webkit-animation: moveFromTop .2s ease-in-out;
+					animation: moveFromTop .2s ease-in-out;
+				}
 			}
 		}
+	}
+}
+
+
+@-webkit-keyframes moveFromTop {
+	from {
+		-webkit-transform: translateY(-200%);
+		transform: translateY(-200%);
+	}
+	to {
+		-webkit-transform: translateY(0%);
+		transform: translateY(0%);
 	}
 }
