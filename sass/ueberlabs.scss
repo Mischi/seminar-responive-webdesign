@@ -1,0 +1,17 @@
+@import "shared";
+
+#labs section {
+
+}
+
+.split-container {
+	display: -webkit-flex;
+	display: flex;
+
+	.first, .second {
+		-webkit-flex: 1.5;
+		flex: 1.5;
+	}
+
+	border: 1px solid $darkgrey;
+}
