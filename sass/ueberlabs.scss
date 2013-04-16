@@ -8,7 +8,7 @@
 
 }
 
-.split-container {
+/*.split-container {
 	display: -webkit-flex;
 	display: flex;
 
@@ -21,8 +21,4 @@
 		-webkit-flex: 1;
 		flex: 1;
 	}
-
-	.ch-grid li:first-child {
-		@include translate(100px, -200px);
-	}
-}
+}*/

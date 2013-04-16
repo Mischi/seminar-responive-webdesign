@@ -1,3 +1,6 @@
+//http://tympanus.net/Tutorials/CSS3RotatingWords/index5.html
+//http://tympanus.net/codrops/2011/12/07/splash-and-coming-soon-page-effects-with-css3/
+
 @import "compass/reset";
 @import "compass/css3/box-sizing";
 
@@ -16,9 +19,20 @@ $containerHeight: 900px;
 * { @include box-sizing("border-box"); }
 
 
-body { font-family: Verdana, Geneva, sans-serif; }
+body { 
+	font-family: Verdana, Geneva, sans-serif; 
+	color: $darkgrey; 
+}
 
-h1, h2, h3, h4, h5, h6 { font-family: Georgia, Times, "Times New Roman", serif; }
+h1, h2, h3, h4, h5, h6 { 
+	font-family: Georgia, Times, "Times New Roman", serif; 
+	color: $darkgrey;
+}
+
+p {
+	font-size: 1.2em;
+	line-height: 1.4em;
+}
 
 
 
@@ -27,7 +41,7 @@ h1, h2, h3, h4, h5, h6 { font-family: Georgia, Times, "Times New Roman", serif; 
 
 	header { 
 		@include centered;
-		padding: 200px 20px 100px 20px;	
+		padding: 150px 20px 100px 20px;	
 
 		p {
 			font-size: 300%;
@@ -52,7 +66,6 @@ h1, h2, h3, h4, h5, h6 { font-family: Georgia, Times, "Times New Roman", serif; 
 		h2 {
 			margin: 1em 0;
 			font-size: 250%;
-			color: #000;
 		}
 	}
 
