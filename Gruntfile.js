@@ -121,7 +121,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-compress');
 
     grunt.registerTask('default', ['package']);
-    grunt.registerTask('watch', ['livereload-start', 'connect:livereload', 'regarde']);
+    grunt.registerTask('watch', ['build:dev', 'livereload-start', 'connect:livereload', 'regarde']);
     grunt.registerTask('build:dev', ['clean:dev', 'compass:dev']);
     grunt.registerTask('build', ['clean:dist', 'compass:dist', 'uglify:dist', 'copy:dist', 'useminPrepare', 'usemin', 'htmlmin:dist']);
     grunt.registerTask('webserver', ['build', 'connect:webserver']);
