@@ -7,13 +7,12 @@
 @import "shared";
 @import "topnav";
 
+@import "home";
 @import "ueberlabs";
 @import "ziele";
 
 @import "screen-max950";
 
-
-$containerHeight: 900px;
 
 
 * { @include box-sizing("border-box"); }
@@ -32,23 +31,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
 	font-size: 1.2em;
 	line-height: 1.4em;
-}
-
-
-
-#home {
-	min-height: $containerHeight;
-
-	header { 
-		@include centered;
-		padding: 150px 20px 100px 20px;	
-
-		p {
-			font-size: 300%;
-			text-align: center;
-			color: $darkgrey;
-		}
-	}
 }
 
 
