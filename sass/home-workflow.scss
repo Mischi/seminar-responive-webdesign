@@ -1,5 +1,7 @@
 @import "compass/css3/transition";
 @import "compass/css3/transform";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
 
 #workflow {
 	position: relative;
@@ -120,6 +122,9 @@
 }
 
 
+$taskYellow: #FFE97F;
+$taskGreen: #A5FF7F;
+$taskOrange: #FFB246;
 
 #display-area {
 	position: relative;
@@ -131,13 +136,20 @@
 		height: 45px;
 
 		visibility: hidden;
+		padding: 2px;
 
-		background-color: green;
+		font-family: 'Patrick Hand', cursive;
+		font-weight: lighter;
+		font-size: 0.7em;
+
+		background: url(../images/task-bg.png) no-repeat;
 	}
 
 	#task1 {
 		top: 90px;
 		left: 40px;
+
+		background-color: $taskYellow;
 
 		-webkit-animation: 
 			zoomTaskToTodo 0.8s ease-in 12s forwards,
@@ -153,6 +165,8 @@
 		top: 90px;
 		left: 160px;
 
+		background-color: $taskGreen;
+
 		-webkit-animation: 
 			zoomTaskToTodo 0.8s ease-in 12.3s forwards,
 			moveTaskToWork 0.8s ease-in 18s forwards,
@@ -166,6 +180,8 @@
 	#task3 {
 		top: 140px;
 		left: 35px;
+
+		background-color: $taskGreen;
 
 		-webkit-animation: 
 			zoomTaskToTodo 0.8s ease-in 13.8s forwards,
@@ -181,6 +197,8 @@
 		top: 145px;
 		left: 135px;
 
+		background-color: $taskYellow;
+
 		-webkit-animation: 
 			zoomTaskToTodo 0.8s ease-in 13.5s forwards,
 			moveTaskToWork 0.8s ease-in 18.6s forwards,
@@ -194,6 +212,8 @@
 	#task5 {
 		top: 195px;
 		left: 145px;
+
+		background-color: $taskOrange;
 
 		-webkit-animation: 
 			zoomTaskToTodo 0.8s ease-in 13.2s forwards,
@@ -209,6 +229,8 @@
 		top: 240px;
 		left: 40px;
 
+		background-color: $taskOrange;
+
 		-webkit-animation: 
 			zoomTaskToTodo 0.8s ease-in 14.1s forwards,
 			moveTaskToWork 0.8s ease-in 19.8s forwards,
@@ -222,6 +244,8 @@
 	#task7 {
 		top: 247px;
 		left: 160px;
+
+		background-color: $taskYellow;
 
 		-webkit-animation: 
 			zoomTaskToTodo 0.8s ease-in 12.6s forwards,
@@ -237,6 +261,8 @@
 		top: 295px;
 		left: 35px;
 
+		background-color: $taskOrange;
+
 		-webkit-animation: 
 			zoomTaskToTodo 0.8s ease-in 14.4s forwards,
 			moveTaskToWork 0.8s ease-in 20.4s forwards,
@@ -250,6 +276,8 @@
 	#task9 {
 		top: 315px;
 		left: 135px;
+
+		background-color: $taskGreen;
 
 		-webkit-animation: 
 			zoomTaskToTodo 0.8s ease-in 12.9s forwards,
@@ -271,15 +299,29 @@
 		-webkit-flex-flow: column;
 	           flex-flow: column;
 
+        @include border-radius(6px, 6px);
+        @include box-shadow(inset 2px 2px 18px #8b8b8b);
+
        	opacity: 0;
 		-webkit-animation: zoomIn 0.5s ease-in 9.5s forwards;
 		animation: zoomIn 0.5s ease-in 9.5s forwards;
+
+        h4, h5 { font-family: 'Patrick Hand', cursive; }
+
+        h4 {
+        	padding-top: 1em;
+    		font-weight: bold;
+        }
+
+        h5 {
+
+        }
 
 		header {
 			-webkit-flex: 0.5;
 			flex: 0.5;
 
-			border: 1px solid black;
+			padding-left: 1em;
 		}
 
 		footer {
@@ -293,8 +335,9 @@
 				-webkit-flex: 1;
 				flex: 1;
 
-
-				border: 1px solid black;
+				padding-top: 1em;
+				font-weight: bold;
+				text-align: center;
 			}
 		}
 	}
