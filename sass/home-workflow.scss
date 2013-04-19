@@ -3,6 +3,10 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 
+$taskYellow: #FFE97F;
+$taskGreen: #A5FF7F;
+$taskOrange: #FFB246;
+
 #workflow {
 	position: relative;
 	margin-top: -100%;
@@ -122,10 +126,6 @@
 }
 
 
-$taskYellow: #FFE97F;
-$taskGreen: #A5FF7F;
-$taskOrange: #FFB246;
-
 #display-area {
 	position: relative;
 	overflow: hidden;
@@ -166,6 +166,8 @@ $taskOrange: #FFB246;
 		left: 160px;
 
 		background-color: $taskGreen;
+
+		@include rotateX(10deg);
 
 		-webkit-animation: 
 			zoomTaskToTodo 0.8s ease-in 12.3s forwards,
@@ -292,6 +294,7 @@ $taskOrange: #FFB246;
 	#scrumboard {
 		display: -webkit-flex;
 		display: flex;
+		position: relative;
 		width: 100%;
 		height: 420px;
 		padding: 0 40px 0 20px;
@@ -339,7 +342,26 @@ $taskOrange: #FFB246;
 				font-weight: bold;
 				text-align: center;
 			}
+
+			#todo, #inwork {
+				background: url(../images/board-bg.png) top right repeat-y;
+			}
 		}
+
+		.bg {
+			position: absolute;
+
+			width: 100%;
+			height: 100%;
+
+			background-image: url(../images/logo.png);
+			background-repeat: no-repeat;
+			background-size: 80%;
+			background-position: left center;
+
+			opacity: 0.04;
+		}
+
 	}
 }
 
