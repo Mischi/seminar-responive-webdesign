@@ -6,6 +6,8 @@ lib-cov
 *.out
 *.pid
 *.gz
+*.sublime-project
+*.sublime-workspace
 
 pids
 logs
@@ -18,3 +20,4 @@ css
 
 npm-debug.log
 seminar-responseweb-fabianraetz.zip
+deploy.bat

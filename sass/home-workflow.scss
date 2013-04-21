@@ -3,6 +3,8 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 
+@import "shared";
+
 $taskYellow: #FFE97F;
 $taskGreen: #A5FF7F;
 $taskOrange: #FFB246;
@@ -167,14 +169,12 @@ $taskOrange: #FFB246;
 
 		background-color: $taskGreen;
 
-		@include rotateX(10deg);
-
 		-webkit-animation: 
-			zoomTaskToTodo 0.8s ease-in 12.3s forwards,
+			zoomTaskToTodo6Deg 0.8s ease-in 12.3s forwards,
 			moveTaskToWork 0.8s ease-in 18s forwards,
 			moveTaskToDone 0.8s ease-in 24s forwards;
 		animation: 
-			zoomTaskToTodo 0.8s ease-in 12.3s forwards,
+			zoomTaskToTodo6Deg 0.8s ease-in 12.3s forwards,
 			moveTaskToWork 0.8s ease-in 18s forwards,
 			moveTaskToDone 0.8s ease-in 24s forwards;
 	}
@@ -202,11 +202,11 @@ $taskOrange: #FFB246;
 		background-color: $taskYellow;
 
 		-webkit-animation: 
-			zoomTaskToTodo 0.8s ease-in 13.5s forwards,
+			zoomTaskToTodo3Deg 0.8s ease-in 13.5s forwards,
 			moveTaskToWork 0.8s ease-in 18.6s forwards,
 			moveTaskToDone 0.8s ease-in 24.6s forwards;	
 		animation: 
-			zoomTaskToTodo 0.8s ease-in 9.9s forwards,
+			zoomTaskToTodo3Deg 0.8s ease-in 9.9s forwards,
 			moveTaskToWork 0.8s ease-in 18.6s forwards,
 			moveTaskToDone 0.8s ease-in 24.6s forwards;		
 	}
@@ -218,11 +218,11 @@ $taskOrange: #FFB246;
 		background-color: $taskOrange;
 
 		-webkit-animation: 
-			zoomTaskToTodo 0.8s ease-in 13.2s forwards,
+			zoomTaskToTodo6Deg 0.8s ease-in 13.2s forwards,
 			moveTaskToWork 0.8s ease-in 19.2s forwards,
 			moveTaskToDone 0.8s ease-in 25.2s forwards;		
 		animation: 
-			zoomTaskToTodo 0.8s ease-in 10.1s forwards,
+			zoomTaskToTodo6Deg 0.8s ease-in 10.1s forwards,
 			moveTaskToWork 0.8s ease-in 19.2s forwards,
 			moveTaskToDone 0.8s ease-in 25.2s forwards;
 	}
@@ -234,11 +234,11 @@ $taskOrange: #FFB246;
 		background-color: $taskOrange;
 
 		-webkit-animation: 
-			zoomTaskToTodo 0.8s ease-in 14.1s forwards,
+			zoomTaskToTodo3Deg 0.8s ease-in 14.1s forwards,
 			moveTaskToWork 0.8s ease-in 19.8s forwards,
 			moveTaskToDone 0.8s ease-in 25.8s forwards;
 		animation: 
-			zoomTaskToTodo 0.8s ease-in 9.3s forwards,
+			zoomTaskToTodo3Deg 0.8s ease-in 9.3s forwards,
 			moveTaskToWork 0.8s ease-in 19.8s forwards,
 			moveTaskToDone 0.8s ease-in 25.8s forwards;
 	}
@@ -266,11 +266,11 @@ $taskOrange: #FFB246;
 		background-color: $taskOrange;
 
 		-webkit-animation: 
-			zoomTaskToTodo 0.8s ease-in 14.4s forwards,
+			zoomTaskToTodo6Deg 0.8s ease-in 14.4s forwards,
 			moveTaskToWork 0.8s ease-in 20.4s forwards,
 			moveTaskToDone 0.8s ease-in 26.4s forwards;
 		animation: 
-			zoomTaskToTodo 0.8s ease-in 9.7s forwards,
+			zoomTaskToTodo6Deg 0.8s ease-in 9.7s forwards,
 			moveTaskToWork 0.8s ease-in 20.4s forwards,
 			moveTaskToDone 0.8s ease-in 26.4s forwards;	
 	}
@@ -282,11 +282,11 @@ $taskOrange: #FFB246;
 		background-color: $taskGreen;
 
 		-webkit-animation: 
-			zoomTaskToTodo 0.8s ease-in 12.9s forwards,
+			zoomTaskToTodo3Deg 0.8s ease-in 12.9s forwards,
 			moveTaskToWork 0.8s ease-in 20.1s forwards,
 			moveTaskToDone 0.8s ease-in 25.1s forwards;
 		animation:
-			zoomTaskToTodo 0.8s ease-in 12.9s forwards,
+			zoomTaskToTodo3Deg 0.8s ease-in 12.9s forwards,
 			moveTaskToWork 0.8s ease-in 20.1s forwards,
 			moveTaskToDone 0.8s ease-in 25.1s forwards;
 	}
@@ -396,6 +396,54 @@ $taskOrange: #FFB246;
 	to {
 		visibility: visible;
 		@include scale(1);
+	}
+}
+
+@-webkit-keyframes zoomTaskToTodo3Deg {
+	from {
+		left: 150%;
+		@include scale(5);
+	}
+	to {
+		visibility: visible;
+		@include scale(1);
+		@include rotate(3deg);
+	}
+}
+
+@keyframes zoomTaskToTodo3Deg {
+	from {
+		left: 150%;
+		@include scale(3);
+	}
+	to {
+		visibility: visible;
+		@include scale(1);
+		@include rotate(3deg);
+	}
+}
+
+@-webkit-keyframes zoomTaskToTodo6Deg {
+	from {
+		left: 150%;
+		@include scale(5);
+	}
+	to {
+		visibility: visible;
+		@include scale(1);
+		@include rotate(-6deg);
+	}
+}
+
+@keyframes zoomTaskToTodo6Deg {
+	from {
+		left: 150%;
+		@include scale(3);
+	}
+	to {
+		visibility: visible;
+		@include scale(1);
+		@include rotate(-6deg);
 	}
 }
 
