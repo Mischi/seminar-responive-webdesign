@@ -42,6 +42,8 @@ module.exports = function (grunt) {
               'dist/site.min.js': [
                 'components/skrollr/dist/skrollr.min.js', 
                 'components/skrollr/dist/skrollr.menu.min.js',
+                'components/jquery/jquery.min.js',
+                'components/jquery-waypoints/waypoints.min.js',
                 'js/site.js'
               ]
             }

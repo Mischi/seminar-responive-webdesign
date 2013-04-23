@@ -8,7 +8,7 @@
 })(navigator.userAgent||navigator.vendor||window.opera);
 
 //http://net.tutsplus.com/tutorials/javascript-ajax/from-jquery-to-javascript-a-reference/
-app = (function(skrollr) {
+app = (function(skrollr, $) {
 
 	var navLinks = document.querySelectorAll('.nav-container li');
 
@@ -19,6 +19,13 @@ app = (function(skrollr) {
 		this.classList.add('active');
 	}
 
+	function addWaypoint(elem, options) {
+		options = options || { offset : -5 };
+		$('#' + elem).waypoint(function(direction) {
+			navigateTo.call(document.getElementById('nav-' + elem));
+		}, options);
+	}
+
 	return {
 		initSkrollr: function() {
 			var s = skrollr.init({
@@ -27,19 +34,20 @@ app = (function(skrollr) {
 
 			skrollr.menu.init(s);
 		},
-		initMenu: function() {
-			for (var i = 0; i < navLinks.length; i++) {
-				navLinks[i].addEventListener('click', navigateTo);
-			};
+		initWaypoint: function () {
+			addWaypoint('kontakt', { offset: 100 });
+			['home', 'labs', 'ziele', 'wirsuchen', 'mitwirkende'].forEach(function(elem) {
+				addWaypoint(elem);
+			});
 		}
 	};
 
-})(skrollr);
+})(skrollr, $);
 
 
 (function(window) {
 	window.onload = function() {
 		app.initSkrollr();
-		app.initMenu();
+		app.initWaypoint();
 	}
 })(window, app);

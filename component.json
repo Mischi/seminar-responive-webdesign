@@ -2,6 +2,8 @@
   "name": "seminar-responive-webdesign",
   "version": "0.0.1",
   "dependencies": {
-    "skrollr": "~0.5.13"
+    "skrollr": "~0.5.13",
+    "jquery-waypoints": "~v2.0.2",
+    "jquery": "~2.0.0"
   }
 }
