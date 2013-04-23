@@ -5,7 +5,7 @@
 @import "home-workflow";
 
 #home {
-	min-height: $containerHeight;
+	height: $containerHeight;
 	overflow: hidden;
 
 	& > header { 
