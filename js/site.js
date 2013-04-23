@@ -19,11 +19,19 @@ app = (function(skrollr, $) {
 		this.classList.add('active');
 	}
 
-	function addWaypoint(elem, options) {
-		options = options || { offset : 150 };
-		$('#' + elem).waypoint(function(direction) {
-			navigateTo.call(document.getElementById('nav-' + elem));
-		}, options);
+	function addWaypoint(elem, downOptions, upOptions) {
+		function waypointFn (directionFn) {
+			return function(direction) {
+				if (direction == directionFn)
+					navigateTo.call(document.getElementById('nav-' + elem));
+			};
+		}
+
+		downOptions = downOptions || { offset : 0 };
+		upOptions = upOptions || { offset: -200 };
+
+		$('#' + elem).waypoint(waypointFn('down'), downOptions);
+		$('#' + elem).waypoint(waypointFn('up'), upOptions);
 	}
 
 	return {
@@ -35,7 +43,7 @@ app = (function(skrollr, $) {
 			skrollr.menu.init(s);
 		},
 		initWaypoint: function () {
-			addWaypoint('home', { offset: -10 });
+			addWaypoint('home', null, { offset: -10 });
 			addWaypoint('kontakt', { offset: 100 });
 			['labs', 'ziele', 'wirsuchen', 'mitwirkende'].forEach(function(elem) {
 				addWaypoint(elem);

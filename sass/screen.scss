@@ -33,11 +33,13 @@ p {
 	line-height: 1.4em;
 }
 
+.container-padding {
+	margin: 20px 0;
+}
 
 .container { 
 	background-color: #fff; 
 	&.dark { background-color: $darkgrey; }
-
 	section {
 		@include centered;
 		padding: 200px 20px 100px 20px;	
