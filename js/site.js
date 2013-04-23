@@ -20,7 +20,7 @@ app = (function(skrollr, $) {
 	}
 
 	function addWaypoint(elem, options) {
-		options = options || { offset : -5 };
+		options = options || { offset : 150 };
 		$('#' + elem).waypoint(function(direction) {
 			navigateTo.call(document.getElementById('nav-' + elem));
 		}, options);
@@ -35,8 +35,9 @@ app = (function(skrollr, $) {
 			skrollr.menu.init(s);
 		},
 		initWaypoint: function () {
+			addWaypoint('home', { offset: -10 });
 			addWaypoint('kontakt', { offset: 100 });
-			['home', 'labs', 'ziele', 'wirsuchen', 'mitwirkende'].forEach(function(elem) {
+			['labs', 'ziele', 'wirsuchen', 'mitwirkende'].forEach(function(elem) {
 				addWaypoint(elem);
 			});
 		}
