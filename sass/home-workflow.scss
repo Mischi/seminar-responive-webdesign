@@ -3,11 +3,15 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 
+
+
 @import "shared";
 
 $taskYellow: #FFE97F;
 $taskGreen: #A5FF7F;
 $taskOrange: #FFB246;
+
+
 
 #workflow {
 	position: relative;
@@ -143,8 +147,6 @@ $taskOrange: #FFB246;
 		font-family: 'Patrick Hand', cursive;
 		font-weight: lighter;
 		font-size: 0.7em;
-
-		background: url(../images/task-bg.png) no-repeat;
 	}
 
 	#task1 {
@@ -344,7 +346,7 @@ $taskOrange: #FFB246;
 			}
 
 			#todo, #inwork {
-				background: url(../images/board-bg.png) top right repeat-y;
+				background-repeat: url(../images/board-bg.png) top right repeat-y;
 			}
 		}
 

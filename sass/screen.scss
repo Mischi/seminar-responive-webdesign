@@ -4,6 +4,8 @@
 @import "compass/reset";
 @import "compass/css3/box-sizing";
 
+@import "sprite/*.png";
+
 @import "shared";
 @import "topnav";
 
@@ -19,6 +21,7 @@
 
 
 body { 
+	@include all-sprite-sprites;
 	font-family: Verdana, Geneva, sans-serif; 
 	color: $darkgrey; 
 }
