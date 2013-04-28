@@ -27,6 +27,9 @@ body {
 	@include all-sprite-sprites;
 	font-family: Verdana, Geneva, sans-serif; 
 	color: $darkgrey; 
+
+	background: #fff url(../images/haus-front-bw.jpg) no-repeat center bottom;
+	background-size: contain;
 }
 
 h1, h2, h3, h4, h5, h6 { 
@@ -44,8 +47,6 @@ p {
 }
 
 .container { 
-	background-color: #fff; 
-
 	overflow: hidden;
 
 	&.dark { background-color: $darkgrey; }

@@ -1,4 +1,6 @@
 //http://tympanus.net/codrops/2012/03/23/responsive-content-navigator-with-css3/
+@import "shared";
+
 
 .cn-container {
 	min-width: 300px;
@@ -64,7 +66,7 @@
 	text-decoration: none;
 	cursor: pointer;
 	box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-	background: #fff url(../images/1.jpg) no-repeat center center;
+	background: #fff none no-repeat center center;
 	-webkit-background-size: 100%; -moz-background-size: 100%; -o-background-size: 100%; background-size: 100%; 
 	background-clip: padding-box;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -118,37 +120,37 @@
 /* Items and sub-items of slide 2*/
 .cn-slide nav a[href="#slide-2-1"],
 #slide-2-1 .cn-content {
-	background-image: url(../images/8.jpg);
+	//background-image: url(../images/8.jpg);
 }
 .cn-slide nav a[href="#slide-2-2"],
 #slide-2-2 .cn-content {
-	background-image: url(../images/9.jpg);
+	//background-image: url(../images/9.jpg);
 }
 .cn-slide nav a[href="#slide-2-3"],
 #slide-2-3 .cn-content {
-	background-image: url(../images/10.jpg);
+	//background-image: url(../images/10.jpg);
 }
 .cn-slide nav a[href="#slide-2-4"],
 #slide-2-4 .cn-content {
-	background-image: url(../images/11.jpg);
+	//background-image: url(../images/11.jpg);
 }
 
 /* Items and sub-items of slide 3*/
 .cn-slide nav a[href="#slide-3-1"],
 #slide-3-1 .cn-content {
-	background-image: url(../images/12.jpg);
+	//background-image: url(../images/12.jpg);
 }
 .cn-slide nav a[href="#slide-3-2"],
 #slide-3-2 .cn-content {
-	background-image: url(../images/13.jpg);
+	//background-image: url(../images/13.jpg);
 }
 .cn-slide nav a[href="#slide-3-3"],
 #slide-3-3 .cn-content {
-	background-image: url(../images/14.jpg);
+	//background-image: url(../images/14.jpg);
 }
 .cn-slide nav a[href="#slide-3-4"],
 #slide-3-4 .cn-content {
-	background-image: url(../images/15.jpg);
+	//background-image: url(../images/15.jpg);
 }
 .cn-content{
 	background: #fff url(../images/bag-logo-content.jpg) no-repeat center center;
