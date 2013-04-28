@@ -2,10 +2,20 @@
 @import "sp-slideshow";
 
 .goal {
-
-	background-color: rgba($bagred, 0.8);
+	width: 100%;
+	height: 100%;
 
 	h1 {
+		margin: 10px 0;
+
+		font-weight: bold;
+		font-size: 160%;
+
 		color: $bagred;
+	}
+
+	p {
+		text-align: left;
+		font-size: 100%;
 	}
 }
