@@ -18,7 +18,8 @@ module.exports = function (grunt) {
           dist: {
             files: [ 
               { src: 'index.html', dest: 'dist/' },
-              { src: 'images/*', dest: 'dist/', filter: 'isFile' }
+              { src: 'images/*', dest: 'dist/', filter: 'isFile' },
+              { src: 'robots.txt', dest: 'dist/' }
             ]
           }
         },
