@@ -1,5 +1,7 @@
 // http://tympanus.net/codrops/2012/04/30/fluid-css3-slideshow-with-parallax-effect/
 
+@import "shared";
+
 .sp-slideshow {
     position: relative;
     margin: 10px auto;
@@ -19,7 +21,7 @@
 	    overflow: hidden;
 
 	    .sp-parallax-bg {
-		    background: url(../images/map.jpg) repeat-x scroll 0 0;
+		    background: url(../images/goals.png) repeat-x scroll 0 0;
 		    background-size: cover;
 		    position: absolute;
 		    top: 0;
@@ -66,8 +68,8 @@
 	    position: absolute;
 	    bottom: 15px;
 	    left: 50%;
-	    width: 9px;
-	    height: 9px;
+	    width: 12px;
+	    height: 12px;
 	    z-index: 1001;
 	    cursor: pointer;
 	    opacity: 0;
@@ -77,19 +79,19 @@
 	    position: absolute;
 	    bottom: 15px;
 	    left: 50%;
-	    width: 6px;
-	    height: 6px;
+	    width: 12px;
+	    height: 12px;
 	    display: block;
 	    z-index: 1000;
-	    border: 3px solid #fff;
-	    border: 3px solid rgba(255,255,255,0.9);
+	    border: 3px solid $bagred;
+	    border: 3px solid rgba($bagred,0.9);
 	    border-radius: 50%;
 	    transition: background-color linear 0.1s;
 	}
 
 	input:checked + label {
-	    background-color: #fff;
-	    background-color: rgba(255,255,255,0.9);
+	    background-color: $bagred;
+	    background-color: rgba($bagred,0.9);
 	}
 
 	.sp-selector-1, .button-label-1 { margin-left: -36px; }
@@ -111,6 +113,7 @@
 	    cursor: pointer;
 	    z-index: 1000;
 	    background: transparent url('../images/arrows.png') no-repeat;
+	    -webkit-transition: opacity linear 0.3s;
 	    transition: opacity linear 0.3s;
 	}
 
@@ -118,17 +121,13 @@
 	.sp-arrow:active{ margin-top: -18px; }
 
 	.sp-selector-1:checked ~ .sp-arrow.sp-a2,
-	.sp-selector-2:checked ~ .sp-arrow.sp-a3,
-	.sp-selector-3:checked ~ .sp-arrow.sp-a4,
-	.sp-selector-4:checked ~ .sp-arrow.sp-a5 {
+	.sp-selector-2:checked ~ .sp-arrow.sp-a3 {
 	    right: 15px;
 	    display: block;
 	    background-position: top right;
 	}
 	.sp-selector-2:checked ~ .sp-arrow.sp-a1,
-	.sp-selector-3:checked ~ .sp-arrow.sp-a2,
-	.sp-selector-4:checked ~ .sp-arrow.sp-a3,
-	.sp-selector-5:checked ~ .sp-arrow.sp-a4 {
+	.sp-selector-3:checked ~ .sp-arrow.sp-a2 {
 	    left: 15px;
 	    display: block;
 	    background-position: top left;
@@ -144,28 +143,19 @@
 
 	input.sp-selector-1:checked ~ .sp-content {
 	    background-position: 0 0;
-	    background-color: #727b7f;
+	    background-color: $darkgrey;
 	}
 	 
 	input.sp-selector-2:checked ~ .sp-content {
 	    background-position: -100px 0;
-	    background-color: #7f7276;
+	    background-color: #3E3838;
 	}
 	 
 	input.sp-selector-3:checked ~ .sp-content {
 	    background-position: -200px 0;
-	    background-color: #737f72;
+	    background-color:  #323E36;
 	}
 	 
-	input.sp-selector-4:checked ~ .sp-content {
-	    background-position: -300px 0;
-	    background-color: #79727f;
-	}
-	 
-	input.sp-selector-5:checked ~ .sp-content {
-	    background-position: -400px 0;
-	    background-color: #7d7f72;
-	}
 
 	input.sp-selector-1:checked ~ .sp-content .sp-parallax-bg {
 	    background-position: 0 0;
@@ -178,15 +168,6 @@
 	input.sp-selector-3:checked ~ .sp-content .sp-parallax-bg {
 	    background-position: -400px 0;
 	}
-	 
-	input.sp-selector-4:checked ~ .sp-content .sp-parallax-bg {
-	    background-position: -600px 0;
-	}
-	 
-	input.sp-selector-5:checked ~ .sp-content .sp-parallax-bg {
-	    background-position: -800px 0;
-	}
-
 
 	input.sp-selector-1:checked ~ .sp-content .sp-slider {
 	    left: 0;
@@ -199,21 +180,12 @@
 	input.sp-selector-3:checked ~ .sp-content .sp-slider {
 	    left: -200%;
 	}
-	 
-	input.sp-selector-4:checked ~ .sp-content .sp-slider {
-	    left: -300%;
-	}
-	 
-	input.sp-selector-5:checked ~ .sp-content .sp-slider {
-	    left: -400%;
-	}
+	
 
 
 	input.sp-selector-1:checked ~ .sp-content .sp-slider > li:first-child,
 	input.sp-selector-2:checked ~ .sp-content .sp-slider > li:nth-child(2),
-	input.sp-selector-3:checked ~ .sp-content .sp-slider > li:nth-child(3),
-	input.sp-selector-4:checked ~ .sp-content .sp-slider > li:nth-child(4),
-	input.sp-selector-5:checked ~ .sp-content .sp-slider > li:nth-child(5){
+	input.sp-selector-3:checked ~ .sp-content .sp-slider > li:nth-child(3){
 	    opacity: 1;
 	}
 }

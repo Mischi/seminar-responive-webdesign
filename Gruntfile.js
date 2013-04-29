@@ -105,7 +105,7 @@ module.exports = function (grunt) {
 
         regarde: {
             fred: {
-                files: ['index.html', 'sass/*.scss', 'js/*.js', 'images/*'],
+                files: ['index.html', 'sass/**/*.scss', 'js/*.js', 'images/*'],
                 tasks: ['compass:dev', 'livereload']
             }
         }
