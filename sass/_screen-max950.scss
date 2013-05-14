@@ -1,11 +1,21 @@
 @media (max-width: 950px) {
-	.nav-container nav {
-		-webkit-flex-wrap: wrap;
-		flex-wrap: wrap;
+	.nav-container {
+		height: 5em;
 
-		-webkit-flex-direction: column;
-		flex-direction: column;
+		nav {
+			-webkit-flex-direction: column;
+			flex-direction: column;
 
-		h1 { text-align: center; }
+			h1 { text-align: center; }
+
+			ul {
+				-webkit-flex: 1.5;
+				flex: 1.5;
+
+				li a { line-height: 2.5em; }
+			}
+		}
 	}
+
+
 } 
