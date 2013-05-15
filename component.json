@@ -4,6 +4,7 @@
   "dependencies": {
     "skrollr": "~0.5.13",
     "jquery-waypoints": "~v2.0.2",
-    "jquery": "~2.0.0"
+    "jquery": "~2.0.0",
+    "skrollr-stylesheets": "git://github.com/Prinzhorn/skrollr-stylesheets.git#~0.0.3"
   }
 }
