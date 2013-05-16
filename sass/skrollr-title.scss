@@ -1,9 +1,6 @@
 .container > section {
 	& > h2 { -skrollr-animation-name:title; }
-	& > div { -skrollr-animation-name:container; }
 }
-
-
 
 @-skrollr-keyframes title {
 	bottom {
@@ -13,16 +10,6 @@
 
 	-100-center-center {
 		transform: translateX(0) rotate(0);
-		opacity: 1;
-	}
-}
-
-@-skrollr-keyframes container {
-	bottom {
-		opacity: 0;
-	}
-
-	-0-center-center {
 		opacity: 1;
 	}
 }

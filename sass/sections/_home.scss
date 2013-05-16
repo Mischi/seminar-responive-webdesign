@@ -15,7 +15,6 @@
 
 		overflow: hidden;
 
-		padding: 150px 20px 100px 20px;	
 
 		#intro p, h2 {
 			font-size: 3em;
@@ -227,4 +226,20 @@
 		visibility: visible;
 		margin-top: 0;
 	}
+}
+
+
+
+@media (max-height: 800px) {
+	#home > header { 
+		padding: 75px 20px 100px 20px; 
+
+		#outro { padding: 0; }
+	}
+	
+	#workflow h2 {  margin-bottom: 1em; }
+}
+
+@media (min-height: 900px) and (max-height: 1080px) { 
+	#home > header { padding: 150px 20px 100px 20px; }	
 }
