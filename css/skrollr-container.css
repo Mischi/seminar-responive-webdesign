@@ -1,1 +1,11 @@
-.container>section>div{-skrollr-animation-name:container}@-skrollr-keyframes container{bottom{opacity:0}-0-center-center{opacity:1}}
+.container > section > div { -skrollr-animation-name:container; }
+
+@-skrollr-keyframes container {
+	bottom {
+		opacity: 0;
+	}
+
+	-0-center-center {
+		opacity: 1;
+	}
+}
