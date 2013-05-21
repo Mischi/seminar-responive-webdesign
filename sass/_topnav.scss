@@ -27,6 +27,8 @@ $navheight: 3em;
 	
 		padding: 0 20px;
 
+		#open-btn { display:none; }
+
 		h1 {
 			-webkit-flex: 1.5;
 			flex: 1.5;
@@ -70,6 +72,9 @@ $navheight: 3em;
 				&#nav-wirsuchen { width: 8em; }
 				&#nav-mitwirkende { width: 8em; }
 				&#nav-kontakt { width: 7em; }
+
+
+				&.logo { display: none; }
 
 				a {
 					display: block;

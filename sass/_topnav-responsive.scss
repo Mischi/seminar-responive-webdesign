@@ -1,0 +1,95 @@
+@import "shared";
+
+@media (min-width: 650px) and (max-width: 950px) {
+	.nav-container {
+		height: 5em;
+
+		nav {
+			-webkit-flex-direction: column;
+			flex-direction: column;
+
+			h1 { text-align: center; }
+
+			ul {
+				-webkit-flex: 1.5;
+				flex: 1.5;
+
+				li a { line-height: 2.5em; }
+			}
+		}
+	}
+}
+
+@media (max-width: 650px) {
+	.nav-container {
+		height: auto;
+
+		nav {
+			#open-btn {
+				display: block;
+				width: 3em;
+				height: 100%;
+
+				hr {
+					border: 0;
+  					width: 100%;
+					color: $darkgrey;
+					background-color: $darkgrey;
+					height: 3px;
+				}
+			}
+
+			h1 {
+				font-size: 1.3em;
+				text-align: right;
+			}
+
+			ul {
+				@include transition(left .3s ease-out);
+
+				display: block;
+				position: fixed;
+				top: 2.75em;
+				left: -100%;
+				min-width: 200px;
+				max-width: 300px;
+				z-index: 10;
+				background-color: $lightgrey;
+
+				&.open {
+					left: 0;
+				}
+
+				li {
+					width: 100% !important;
+
+					a {
+						text-align: left;
+						padding-left: 10%;
+					}
+
+					&.logo {
+						display: block;
+						height: 8em;
+						margin-top: 1em;
+						opacity: 0.3;
+						background-image: url(../images/bag-logo.png);
+						background-repeat: no-repeat;
+						background-size: contain;
+						background-position: center; 
+
+						&:hover { background-color: #fff; }
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 350px) {
+	.nav-container  { 
+		h1 { font-size: 1.2em !important; }
+		hr { height: 2px !important; }
+		ul { top: 2.55em !important; }
+	}
+}

@@ -52,6 +52,19 @@ app = (function(skrollr, $) {
 				//prevent hash change
 				return false;
 			});
+		},
+		initOpenBtn: function() {
+			var btn = document.getElementById('open-btn');
+			var menu = document.querySelector('.nav-container ul');
+			var body = document.getElementsByTagName('body')[0];
+
+			btn.addEventListener('click', function() {
+				menu.classList.toggle('open');
+			}, false);
+
+			body.addEventListener('click', function() {
+		    	menu.classList.remove('open');
+		  	}, true);
 		}
 	};
 
@@ -63,6 +76,7 @@ app = (function(skrollr, $) {
 		app.initSkrollr();
 		app.initWaypoint();
 		app.initContentNavigator();
+		app.initOpenBtn();
 	}
 })(window, app);
 
