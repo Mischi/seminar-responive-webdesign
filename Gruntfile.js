@@ -41,6 +41,8 @@ module.exports = function (grunt) {
           dist: {
             files: {
               'dist/site.min.js': [
+                'js/matchMedia.js',
+                'components/skrollr-stylesheets/dist/skrollr.stylesheets.min.js',
                 'components/skrollr/dist/skrollr.min.js', 
                 'components/skrollr/dist/skrollr.menu.min.js',
                 'components/jquery/jquery.min.js',
