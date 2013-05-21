@@ -32,6 +32,7 @@ module.exports = function (grunt) {
             options: {
               config: 'config.rb',
               cssDir: 'dist/css',
+              relativeAssets: true,
               environment: 'production'
             }
           }
