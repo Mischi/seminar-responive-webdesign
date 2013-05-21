@@ -1,13 +1,34 @@
 //http://net.tutsplus.com/tutorials/javascript-ajax/from-jquery-to-javascript-a-reference/
-app = (function(skrollr, $) {
+app = (function(skrollr, $, window) {
+	var isMobile = window.matchMedia('(max-width: 650px)').matches;
+	var title = document.querySelector('.nav-container h1');
+	var navLinks = document.querySelectorAll('.nav-container li.nav');
+	var firstTitleUpdate = true;
 
-	var navLinks = document.querySelectorAll('.nav-container li');
+	function updateTitle(newTitleText) {
+     	if(!firstTitleUpdate) {
+	     	//restart animation
+	     	//TODO: find a better solution
+	     	title.classList.remove('up-down-anim');
+	     	setTimeout(function() {
+	     		title.classList.add('up-down-anim');
+	     		setTimeout(function() {
+	 		     	title.innerText = newTitleText;
+	 		    }, 200);
+	     	}, 0);
+     	}
+     	firstTitleUpdate = false;
+	}
 
 	function navigateTo() {
 		for (var i = 0; i < navLinks.length; i++) {
 			navLinks[i].classList.remove('active');
 		};
 		this.classList.add('active');
+
+		if (isMobile) {
+			updateTitle(this.dataset.title);
+		};
 	}
 
 	function addWaypoint(elem, downOptions, upOptions) {
@@ -68,15 +89,18 @@ app = (function(skrollr, $) {
 		}
 	};
 
-})(skrollr, $);
+})(skrollr, $, window);
 
 
 (function(window) {
 	window.onload = function() {
+		if (window.matchMedia('(max-width: 650px)').matches) {
+			app.initOpenBtn();
+		}
+
 		app.initSkrollr();
 		app.initWaypoint();
 		app.initContentNavigator();
-		app.initOpenBtn();
 	}
 })(window, app);
 
