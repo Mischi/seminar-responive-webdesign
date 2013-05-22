@@ -5,7 +5,28 @@
 @import "sections/home-workflow";
 
 
+#home #intro p, #home h2{
+	text-align: center;
+	color: $darkgrey;
+}
 
+
+#outro {
+	text-align: center;
+	padding: 2em 0;
+	margin-top: 100%;
+	visibility: hidden;
+
+
+	a {
+		text-decoration: none;
+		color: $bagred;
+
+		&:hover, &:active {
+			text-decoration: none;
+		}
+	}
+}
 
 /*****************************************************************
  * WIDTH QUERIES												 *
@@ -15,6 +36,10 @@
 	#home {
 		height: $containerHeight;
 		overflow: hidden;
+
+		#intro p, h2 {
+			font-size: 4vh;
+		}
 
 		& > header {
 			min-height: $containerHeight; 
@@ -95,13 +120,27 @@
 				animation: scaleLogoToBgV 1s ease-in-out 6.5s forwards;				
 			}
 
-			#outro { display: none; }
+			#outro { 
+				-webkit-animation: slideOutroUp 2.5s ease-in-out 25s forwards;
+				animation: slideOutroUp 2.5s ease-in-out 25s forwards;
+
+				a {
+					line-height: 1vh;
+					font-size: 2.5vh;
+				}
+			}
 		}
 	}
 }
 
 @media (min-width: 650px) and (max-width: 1024px) {
 	#home {
+
+		#intro p, h2 {
+			margin-top: 1.3em;
+			font-size: 5vh;
+		}
+
 		.step2 {
 			height: 20vh !important;
 			width: 20vw !important;
@@ -130,32 +169,18 @@
 
 			overflow: hidden;
 
-
 			#intro p, h2 {
 				font-size: 3em;
-				text-align: center;
-				color: $darkgrey;
 			}
 
 			#outro {
-				text-align: center;
-				padding: 2em 0;
-				margin-top: 100%;
-				visibility: hidden;
 				-webkit-animation: slideOutroUp 2.5s ease-in-out 29s forwards;
 				animation: slideOutroUp 2.5s ease-in-out 29s forwards;
-
 
 				a {
 					font-weight: bold;
 					line-height: 2em;
 					font-size: 1.2em;
-					text-decoration: none;
-					color: $bagred;
-
-					&:hover, &:active {
-						text-decoration: none;
-					}
 				}
 			}
 		
