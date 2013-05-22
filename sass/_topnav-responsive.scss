@@ -1,5 +1,25 @@
 @import "shared";
 
+@media (min-width: 950px) {
+	.container > section h2 {
+		font-size: 250%;
+	}
+
+	p {
+		font-size: 1.2em;
+		line-height: 1.4em;
+	}
+}
+
+@media (max-width: 950px) {
+	.container > section h2 { font-size: 150%; }
+
+	p {
+		font-size: 1em;
+		line-height: 1.3em;
+	}
+}
+
 @media (min-width: 650px) and (max-width: 950px) {
 	.nav-container {
 		height: 5em;
