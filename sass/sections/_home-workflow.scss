@@ -12,98 +12,350 @@ $taskGreen: #A5FF7F;
 $taskOrange: #FFB246;
 
 
+/*****************************************************************
+ * WIDTH QUERIES											 	 *
+ *****************************************************************/
+@media (max-width: 650px) {
+	#display-area, #workflow { display: none; }
+}
 
-#workflow {
-	position: relative;
-	margin-top: -100%;
+@media (min-width: 650px) and (max-width: 1024px) {
+	#display-area, #workflow { display: none; }
+}
 
-	-webkit-animation: fallInWorkflow 1s ease-in-out 7.5s forwards;
-	animation: fallInWorkflow 1s ease-in-out 7.5s forwards;
+@media (min-width: 1024px) {
+	#workflow {
+		position: relative;
+		margin-top: -100%;
 
-	h2 {
-		font-size: 4em;
-		color: $bagred;
-		margin-bottom: 2em;
+		-webkit-animation: fallInWorkflow 1s ease-in-out 7.5s forwards;
+		animation: fallInWorkflow 1s ease-in-out 7.5s forwards;
+
+		h2 {
+			font-size: 4em;
+			color: $bagred;
+			margin-bottom: 2em;
+		}
+
+		#workflow-container {
+			display: -webkit-flex;
+			display: flex;
+			font-size: 1.1em;
+
+			h3	{ 
+				font-size: 1.5em;
+				font-size: 2em;
+				margin: 10px 0;
+
+				color: $bagred;
+			}
+
+			p {
+				font-size: 1em;
+				color: $darkgrey;
+			}
+
+			#info {
+				-webkit-flex: 1;
+				flex: 1;
+
+				#idea > *, #project > *, #result > * {
+					margin-left: -200%;
+				}
+
+				#idea {
+					h3 {
+						-webkit-animation: slideIn 1s ease-in-out 10s forwards;
+						animation: slideIn 1s ease-in-out 10s forwards;
+					}
+
+					div {
+						width: 100%;
+						height: 100px;
+
+						-webkit-animation: slideIn 1s ease-in-out 10.3s forwards;
+						animation: slideIn 1s ease-in-out 10.3s forwards;					
+					}
+				}
+
+				#project {
+					h3 {
+						-webkit-animation: slideIn 1s ease-in-out 15.5s forwards;
+						animation: slideIn 1s ease-in-out 15.5s forwards;
+					}
+
+					div {
+						width: 100%;
+						height: 100px;
+
+						-webkit-animation: slideIn 1s ease-in-out 15.8s forwards;
+						animation: slideIn 1s ease-in-out 15.8s forwards;					
+					}
+				}
+
+				#result {
+					h3 {
+						-webkit-animation: slideIn 1s ease-in-out 21s forwards;
+						animation: slideIn 1s ease-in-out 21s forwards;
+					}
+
+					div {
+						width: 100%;
+						height: 100px;
+
+						-webkit-animation: slideIn 1s ease-in-out 21.3s forwards;
+						animation: slideIn 1s ease-in-out 21.3s forwards;					
+					}
+				}
+			}
+
+			#display-area {
+				-webkit-flex: 3;
+				flex: 3;
+			}
+		}
 	}
 
-	#workflow-container {
-		display: -webkit-flex;
-		display: flex;
-		font-size: 1.1em;
+	#display-area {
+		position: relative;
+		overflow: hidden;
 
-		h3	{ 
-			font-size: 1.5em;
-			font-size: 2em;
-			margin: 10px 0;
+		.task {
+			position: absolute;
+			width: 90px;
+			height: 45px;
 
-			color: $bagred;
+			visibility: hidden;
+			padding: 2px;
+
+			font-family: 'Patrick Hand', cursive;
+			font-weight: lighter;
+			font-size: 0.7em;
 		}
 
-		p {
-			font-size: 1em;
-			color: $darkgrey;
+		#task1 {
+			top: 90px;
+			left: 40px;
+
+			background-color: $taskYellow;
+
+			-webkit-animation: 
+				zoomTaskToTodo 0.8s ease-in 12s forwards,
+				moveTaskToWork 0.8s ease-in 18.3s forwards,
+				moveTaskToDone 0.8s ease-in 24.3s forwards;
+			animation: 
+				zoomTaskToTodo 0.8s ease-in 12s forwards,
+				moveTaskToWork 0.8s ease-in 18.3s forwards,
+				moveTaskToDone 0.8s ease-in 24.3s forwards;
 		}
 
-		#info {
-			-webkit-flex: 1;
-			flex: 1;
+		#task2 {
+			top: 90px;
+			left: 160px;
 
-			#idea > *, #project > *, #result > * {
-				margin-left: -200%;
-			}
+			background-color: $taskGreen;
 
-			#idea {
-				h3 {
-					-webkit-animation: slideIn 1s ease-in-out 10s forwards;
-					animation: slideIn 1s ease-in-out 10s forwards;
-				}
-
-				div {
-					width: 100%;
-					height: 100px;
-
-					-webkit-animation: slideIn 1s ease-in-out 10.3s forwards;
-					animation: slideIn 1s ease-in-out 10.3s forwards;					
-				}
-			}
-
-			#project {
-				h3 {
-					-webkit-animation: slideIn 1s ease-in-out 15.5s forwards;
-					animation: slideIn 1s ease-in-out 15.5s forwards;
-				}
-
-				div {
-					width: 100%;
-					height: 100px;
-
-					-webkit-animation: slideIn 1s ease-in-out 15.8s forwards;
-					animation: slideIn 1s ease-in-out 15.8s forwards;					
-				}
-			}
-
-			#result {
-				h3 {
-					-webkit-animation: slideIn 1s ease-in-out 21s forwards;
-					animation: slideIn 1s ease-in-out 21s forwards;
-				}
-
-				div {
-					width: 100%;
-					height: 100px;
-
-					-webkit-animation: slideIn 1s ease-in-out 21.3s forwards;
-					animation: slideIn 1s ease-in-out 21.3s forwards;					
-				}
-			}
+			-webkit-animation: 
+				zoomTaskToTodo6Deg 0.8s ease-in 12.3s forwards,
+				moveTaskToWork 0.8s ease-in 18s forwards,
+				moveTaskToDone 0.8s ease-in 24s forwards;
+			animation: 
+				zoomTaskToTodo6Deg 0.8s ease-in 12.3s forwards,
+				moveTaskToWork 0.8s ease-in 18s forwards,
+				moveTaskToDone 0.8s ease-in 24s forwards;
 		}
 
-		#display-area {
-			-webkit-flex: 3;
-			flex: 3;
+		#task3 {
+			top: 140px;
+			left: 35px;
+
+			background-color: $taskGreen;
+
+			-webkit-animation: 
+				zoomTaskToTodo 0.8s ease-in 13.8s forwards,
+				moveTaskToWork 0.8s ease-in 18.9s forwards,
+				moveTaskToDone 0.8s ease-in 24.9s forwards;	
+			animation: 
+				zoomTaskToTodo 0.8s ease-in 9.7s forwards,
+				moveTaskToWork 0.8s ease-in 18.9s forwards,
+				moveTaskToDone 0.8s ease-in 24.9s forwards;		
+		}
+
+		#task4 {
+			top: 145px;
+			left: 135px;
+
+			background-color: $taskYellow;
+
+			-webkit-animation: 
+				zoomTaskToTodo3Deg 0.8s ease-in 13.5s forwards,
+				moveTaskToWork 0.8s ease-in 18.6s forwards,
+				moveTaskToDone 0.8s ease-in 24.6s forwards;	
+			animation: 
+				zoomTaskToTodo3Deg 0.8s ease-in 9.9s forwards,
+				moveTaskToWork 0.8s ease-in 18.6s forwards,
+				moveTaskToDone 0.8s ease-in 24.6s forwards;		
+		}
+
+		#task5 {
+			top: 195px;
+			left: 145px;
+
+			background-color: $taskOrange;
+
+			-webkit-animation: 
+				zoomTaskToTodo6Deg 0.8s ease-in 13.2s forwards,
+				moveTaskToWork 0.8s ease-in 19.2s forwards,
+				moveTaskToDone 0.8s ease-in 25.2s forwards;		
+			animation: 
+				zoomTaskToTodo6Deg 0.8s ease-in 10.1s forwards,
+				moveTaskToWork 0.8s ease-in 19.2s forwards,
+				moveTaskToDone 0.8s ease-in 25.2s forwards;
+		}
+
+		#task6 {
+			top: 240px;
+			left: 40px;
+
+			background-color: $taskOrange;
+
+			-webkit-animation: 
+				zoomTaskToTodo3Deg 0.8s ease-in 14.1s forwards,
+				moveTaskToWork 0.8s ease-in 19.8s forwards,
+				moveTaskToDone 0.8s ease-in 25.8s forwards;
+			animation: 
+				zoomTaskToTodo3Deg 0.8s ease-in 9.3s forwards,
+				moveTaskToWork 0.8s ease-in 19.8s forwards,
+				moveTaskToDone 0.8s ease-in 25.8s forwards;
+		}
+
+		#task7 {
+			top: 247px;
+			left: 160px;
+
+			background-color: $taskYellow;
+
+			-webkit-animation: 
+				zoomTaskToTodo 0.8s ease-in 12.6s forwards,
+				moveTaskToWork 0.8s ease-in 19.5s forwards,
+				moveTaskToDone 0.8s ease-in 25.5s forwards;
+			animation: 
+				zoomTaskToTodo 0.8s ease-in 12.6s forwards,
+				moveTaskToWork 0.8s ease-in 19.5s forwards,
+				moveTaskToDone 0.8s ease-in 25.5s forwards;	
+		}
+
+		#task8 {
+			top: 295px;
+			left: 35px;
+
+			background-color: $taskOrange;
+
+			-webkit-animation: 
+				zoomTaskToTodo6Deg 0.8s ease-in 14.4s forwards,
+				moveTaskToWork 0.8s ease-in 20.4s forwards,
+				moveTaskToDone 0.8s ease-in 26.4s forwards;
+			animation: 
+				zoomTaskToTodo6Deg 0.8s ease-in 9.7s forwards,
+				moveTaskToWork 0.8s ease-in 20.4s forwards,
+				moveTaskToDone 0.8s ease-in 26.4s forwards;	
+		}
+
+		#task9 {
+			top: 315px;
+			left: 135px;
+
+			background-color: $taskGreen;
+
+			-webkit-animation: 
+				zoomTaskToTodo3Deg 0.8s ease-in 12.9s forwards,
+				moveTaskToWork 0.8s ease-in 20.1s forwards,
+				moveTaskToDone 0.8s ease-in 25.1s forwards;
+			animation:
+				zoomTaskToTodo3Deg 0.8s ease-in 12.9s forwards,
+				moveTaskToWork 0.8s ease-in 20.1s forwards,
+				moveTaskToDone 0.8s ease-in 25.1s forwards;
+		}
+
+		#scrumboard {
+			display: -webkit-flex;
+			display: flex;
+			position: relative;
+			width: 100%;
+			height: 420px;
+			padding: 0 40px 0 20px;
+
+			-webkit-flex-flow: column;
+		           flex-flow: column;
+
+	        @include border-radius(6px, 6px);
+	        @include box-shadow(inset 2px 2px 18px #8b8b8b);
+
+	       	opacity: 0;
+			-webkit-animation: zoomIn 0.5s ease-in 9.5s forwards;
+			animation: zoomIn 0.5s ease-in 9.5s forwards;
+
+	        h4, h5 { font-family: 'Patrick Hand', cursive; }
+
+	        h4 {
+	        	padding-top: 1em;
+	    		font-weight: bold;
+	        }
+
+	        h5 {
+
+	        }
+
+			header {
+				-webkit-flex: 0.5;
+				flex: 0.5;
+
+				padding-left: 1em;
+			}
+
+			footer {
+				display: -webkit-flex;
+				display: flex;
+
+				-webkit-flex: 5;
+				flex: 5;
+
+				#todo, #inwork, #done {
+					-webkit-flex: 1;
+					flex: 1;
+
+					padding-top: 1em;
+					font-weight: bold;
+					text-align: center;
+				}
+
+				#todo, #inwork {
+					background: url(../images/board-bg.png) repeat-y top right;
+				}
+			}
+
+			.bg {
+				position: absolute;
+
+				width: 100%;
+				height: 100%;
+
+				background-image: url(../images/logo.png);
+				background-repeat: no-repeat;
+				background-size: 80%;
+				background-position: left center;
+
+				opacity: 0.04;
+			}
+
 		}
 	}
 }
+
+
+/*****************************************************************
+ * ANIMATIONS												 	 *
+ *****************************************************************/
 
 
 @-webkit-keyframes fallInWorkflow {
@@ -132,242 +384,9 @@ $taskOrange: #FFB246;
 }
 
 
-#display-area {
-	position: relative;
-	overflow: hidden;
 
-	.task {
-		position: absolute;
-		width: 90px;
-		height: 45px;
 
-		visibility: hidden;
-		padding: 2px;
-
-		font-family: 'Patrick Hand', cursive;
-		font-weight: lighter;
-		font-size: 0.7em;
-	}
-
-	#task1 {
-		top: 90px;
-		left: 40px;
-
-		background-color: $taskYellow;
-
-		-webkit-animation: 
-			zoomTaskToTodo 0.8s ease-in 12s forwards,
-			moveTaskToWork 0.8s ease-in 18.3s forwards,
-			moveTaskToDone 0.8s ease-in 24.3s forwards;
-		animation: 
-			zoomTaskToTodo 0.8s ease-in 12s forwards,
-			moveTaskToWork 0.8s ease-in 18.3s forwards,
-			moveTaskToDone 0.8s ease-in 24.3s forwards;
-	}
-
-	#task2 {
-		top: 90px;
-		left: 160px;
-
-		background-color: $taskGreen;
-
-		-webkit-animation: 
-			zoomTaskToTodo6Deg 0.8s ease-in 12.3s forwards,
-			moveTaskToWork 0.8s ease-in 18s forwards,
-			moveTaskToDone 0.8s ease-in 24s forwards;
-		animation: 
-			zoomTaskToTodo6Deg 0.8s ease-in 12.3s forwards,
-			moveTaskToWork 0.8s ease-in 18s forwards,
-			moveTaskToDone 0.8s ease-in 24s forwards;
-	}
-
-	#task3 {
-		top: 140px;
-		left: 35px;
-
-		background-color: $taskGreen;
-
-		-webkit-animation: 
-			zoomTaskToTodo 0.8s ease-in 13.8s forwards,
-			moveTaskToWork 0.8s ease-in 18.9s forwards,
-			moveTaskToDone 0.8s ease-in 24.9s forwards;	
-		animation: 
-			zoomTaskToTodo 0.8s ease-in 9.7s forwards,
-			moveTaskToWork 0.8s ease-in 18.9s forwards,
-			moveTaskToDone 0.8s ease-in 24.9s forwards;		
-	}
-
-	#task4 {
-		top: 145px;
-		left: 135px;
-
-		background-color: $taskYellow;
-
-		-webkit-animation: 
-			zoomTaskToTodo3Deg 0.8s ease-in 13.5s forwards,
-			moveTaskToWork 0.8s ease-in 18.6s forwards,
-			moveTaskToDone 0.8s ease-in 24.6s forwards;	
-		animation: 
-			zoomTaskToTodo3Deg 0.8s ease-in 9.9s forwards,
-			moveTaskToWork 0.8s ease-in 18.6s forwards,
-			moveTaskToDone 0.8s ease-in 24.6s forwards;		
-	}
-
-	#task5 {
-		top: 195px;
-		left: 145px;
-
-		background-color: $taskOrange;
-
-		-webkit-animation: 
-			zoomTaskToTodo6Deg 0.8s ease-in 13.2s forwards,
-			moveTaskToWork 0.8s ease-in 19.2s forwards,
-			moveTaskToDone 0.8s ease-in 25.2s forwards;		
-		animation: 
-			zoomTaskToTodo6Deg 0.8s ease-in 10.1s forwards,
-			moveTaskToWork 0.8s ease-in 19.2s forwards,
-			moveTaskToDone 0.8s ease-in 25.2s forwards;
-	}
-
-	#task6 {
-		top: 240px;
-		left: 40px;
-
-		background-color: $taskOrange;
-
-		-webkit-animation: 
-			zoomTaskToTodo3Deg 0.8s ease-in 14.1s forwards,
-			moveTaskToWork 0.8s ease-in 19.8s forwards,
-			moveTaskToDone 0.8s ease-in 25.8s forwards;
-		animation: 
-			zoomTaskToTodo3Deg 0.8s ease-in 9.3s forwards,
-			moveTaskToWork 0.8s ease-in 19.8s forwards,
-			moveTaskToDone 0.8s ease-in 25.8s forwards;
-	}
-
-	#task7 {
-		top: 247px;
-		left: 160px;
-
-		background-color: $taskYellow;
-
-		-webkit-animation: 
-			zoomTaskToTodo 0.8s ease-in 12.6s forwards,
-			moveTaskToWork 0.8s ease-in 19.5s forwards,
-			moveTaskToDone 0.8s ease-in 25.5s forwards;
-		animation: 
-			zoomTaskToTodo 0.8s ease-in 12.6s forwards,
-			moveTaskToWork 0.8s ease-in 19.5s forwards,
-			moveTaskToDone 0.8s ease-in 25.5s forwards;	
-	}
-
-	#task8 {
-		top: 295px;
-		left: 35px;
-
-		background-color: $taskOrange;
-
-		-webkit-animation: 
-			zoomTaskToTodo6Deg 0.8s ease-in 14.4s forwards,
-			moveTaskToWork 0.8s ease-in 20.4s forwards,
-			moveTaskToDone 0.8s ease-in 26.4s forwards;
-		animation: 
-			zoomTaskToTodo6Deg 0.8s ease-in 9.7s forwards,
-			moveTaskToWork 0.8s ease-in 20.4s forwards,
-			moveTaskToDone 0.8s ease-in 26.4s forwards;	
-	}
-
-	#task9 {
-		top: 315px;
-		left: 135px;
-
-		background-color: $taskGreen;
-
-		-webkit-animation: 
-			zoomTaskToTodo3Deg 0.8s ease-in 12.9s forwards,
-			moveTaskToWork 0.8s ease-in 20.1s forwards,
-			moveTaskToDone 0.8s ease-in 25.1s forwards;
-		animation:
-			zoomTaskToTodo3Deg 0.8s ease-in 12.9s forwards,
-			moveTaskToWork 0.8s ease-in 20.1s forwards,
-			moveTaskToDone 0.8s ease-in 25.1s forwards;
-	}
-
-	#scrumboard {
-		display: -webkit-flex;
-		display: flex;
-		position: relative;
-		width: 100%;
-		height: 420px;
-		padding: 0 40px 0 20px;
-
-		-webkit-flex-flow: column;
-	           flex-flow: column;
-
-        @include border-radius(6px, 6px);
-        @include box-shadow(inset 2px 2px 18px #8b8b8b);
-
-       	opacity: 0;
-		-webkit-animation: zoomIn 0.5s ease-in 9.5s forwards;
-		animation: zoomIn 0.5s ease-in 9.5s forwards;
-
-        h4, h5 { font-family: 'Patrick Hand', cursive; }
-
-        h4 {
-        	padding-top: 1em;
-    		font-weight: bold;
-        }
-
-        h5 {
-
-        }
-
-		header {
-			-webkit-flex: 0.5;
-			flex: 0.5;
-
-			padding-left: 1em;
-		}
-
-		footer {
-			display: -webkit-flex;
-			display: flex;
-
-			-webkit-flex: 5;
-			flex: 5;
-
-			#todo, #inwork, #done {
-				-webkit-flex: 1;
-				flex: 1;
-
-				padding-top: 1em;
-				font-weight: bold;
-				text-align: center;
-			}
-
-			#todo, #inwork {
-				background: url(../images/board-bg.png) repeat-y top right;
-			}
-		}
-
-		.bg {
-			position: absolute;
-
-			width: 100%;
-			height: 100%;
-
-			background-image: url(../images/logo.png);
-			background-repeat: no-repeat;
-			background-size: 80%;
-			background-position: left center;
-
-			opacity: 0.04;
-		}
-
-	}
-}
-
-@-webkit-keyframes zoomIn {
+	@-webkit-keyframes zoomIn {
 	to {
 		opacity: 1;
 	}

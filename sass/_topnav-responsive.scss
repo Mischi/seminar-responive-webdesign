@@ -63,6 +63,11 @@
 					background-color: $darkgrey;
 					height: 3px;
 				}
+
+				&:hover hr {
+					color: $bagred;
+					background-color: $bagred;
+				}
 			}
 
 			h1 {
