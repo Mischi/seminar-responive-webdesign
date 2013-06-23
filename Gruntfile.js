@@ -23,7 +23,8 @@ module.exports = function (grunt) {
               { src: 'presentation/**', dest: 'dist/'},
               { src: 'components/impress.js/js/impress.js', dest: 'dist/presentation/impress.js'},
               { src: 'components/impress.js/css/impress-demo.css', dest: 'dist/presentation/impress-demo.css'},
-              { src: 'Seminararbeit-FabianRaetz.pdf', dest: 'dist/Seminararbeit-FabianRaetz.pdf'}
+              { src: 'Seminararbeit-FabianRaetz.pdf', dest: 'dist/Seminararbeit-FabianRaetz.pdf'},
+              { src: 'README.dist.md', dest: 'dist/README.md'}
             ]
           }
         },
