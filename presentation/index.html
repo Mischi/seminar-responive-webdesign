@@ -27,10 +27,11 @@
 	<div id="impress">
 
 	    <div id="start" class="step slide" data-x="-1000" data-y="-1500">
+    		<br><br><br><br><br><br>
     		<h1>CSS Animation und Transformation</h1>
     		<h2>Seminar Response Webdesign</h2>
 
-
+			<br><br><br><br><br><br>
     		<p>by Fabian Raetz</p>
 		</div>
 
@@ -133,6 +134,126 @@ transform: translateX(800px) rotate(135deg);
 			</pre>
 		</div>
 
+		<div id="transition-color" class="step" data-x="4000" data-y="-4000" data-scale="3">
+			<div id="transition-color-elem" class="rect transition-color"></div>
+			<br /><br />
+			<pre>
+transition: background-color 5s linear;
+background-color: blue;
+			</pre>
+		</div>
+
+		<div id="animation" class="step" data-x="0" data-y="-4000" data-scale="2" data-rotate="270">
+			<p>Mittels <strong>CSS Animations</strong> lassen sich wie mit Transitions, Animation erstellen. Diese basieren jedoch auf <strong>Keyframes</strong> und sind <strong>explizit!</strong></p>
+		</div>
+
+		<div id="animation-demo1" class="step" data-x="-2000" data-y="-5000" data-scale="4" data-rotate="270">
+			<div id="animation-demo-elem" class="rect animation-rotateTo"></div>
+			<br /><br />
+			<table style="font-size: 0.7em">
+				<tr>
+					<td><pre>
+@keyframes rotateTo {
+  to {
+    transform: translateX(800px) 
+    		   rotate(360deg); 
+  }
+}
+					</pre></td>
+					<td><pre>
+#elem {
+  animation-name: rotateTo;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+					</pre></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="animation-demo2" class="step" data-x="-6000" data-y="-5000" data-scale="4" data-rotate="270">
+			<div id="animation-demo-elem" class="rect animation-rotateToRectMove"></div>
+			<br /><br />
+<pre style="font-size: 0.6em">
+@keyframes rotateToRectMove {
+  20% { transform: translateY(100px) rotate(90deg); }
+  80% { transform: translateX(700px) translateY(100px) rotate(270deg); }
+  100% {transform: translateX(700px) rotate(360deg); }
+}
+</pre>
+		</div>
+
+
+
+		<div id="demo" class=" slide step" data-x="-2500" data-y="-1500">
+			<br><br><br><br><br><br>
+			<h1>Demo</h1>
+			<h2>Brockhaus AG Labs - Remake</h2>
+		</div>
+
+		<div id="demo-startseite" class="step img" data-x="-2500" data-y="-500">
+			<table>
+				<tr>
+					<td class="desktop"></td>
+					<td class="mobile"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="demo-menu" class="step img" data-x="-2500" data-y="500">
+			<table>
+				<tr>
+					<td class="mobile mobilebig"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="demo-über" class="step img" data-x="-2500" data-y="1500">
+			<table>
+				<tr>
+					<td class="desktop"></td>
+					<td class="mobile"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="demo-ziele" class="step img" data-x="-4500" data-y="-500">
+			<table>
+				<tr>
+					<td class="desktop"></td>
+					<td class="mobile"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="demo-wirsuchen" class="step img" data-x="-4500" data-y="500">
+			<table>
+				<tr>
+					<td class="desktop"></td>
+					<td class="mobile"></td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div id="demo-startseite-live" class=" slide step" data-x="-4500" data-y="1500">
+			<br><br><br><br><br><br>
+			<h1>Live Demo</h1>
+			<h2>Animation Startseite</h2>
+		</div>
+
+		<div id="qa" class="step" data-x="-4500" data-y="2500">
+			
+			<h1 style="font-size:3em">Q & A</h1>
+		</div>
+
+		<div id="thx" class="step" data-x="8000" data-y="9500" data-scale="20" data-rotate="90">
+			<br><br><br><br><br><br>
+			<h1 style="font-size:3em">Vielen dank!<h1>
+		</div>
+
 	<!-- build:js impress.js -->
 	<script src="../components/impress.js/js/impress.js"></script>
 	<!-- endbuild -->
@@ -140,9 +261,13 @@ transform: translateX(800px) rotate(135deg);
 	<script>impress().init();</script>
 	<script type="text/javascript">
 		document.addEventListener("impress:stepenter", function (event) {
-            if (event.srcElement.id == 'transition-demo') {
-        		document.querySelector('#transition-demo-elem').classList.add('transition-actions');
-            }
+			var id = event.srcElement.id;
+			function addClass(i, s, c) {
+				if(id == i) document.querySelector(s).classList.toggle(c);
+			};
+
+			addClass('transition-demo', '#transition-demo-elem', 'transition-actions');
+			addClass('transition-color', '#transition-color-elem', 'transition-color-actions');
         }, false);
 	</script>
 </body>

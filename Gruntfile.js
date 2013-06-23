@@ -20,9 +20,10 @@ module.exports = function (grunt) {
               { src: 'index.html', dest: 'dist/' },
               { src: 'images/*', dest: 'dist/', filter: 'isFile' },
               { src: 'robots.txt', dest: 'dist/' },
-              { src: 'presentation/*', dest: 'dist/'},
+              { src: 'presentation/**', dest: 'dist/'},
               { src: 'components/impress.js/js/impress.js', dest: 'dist/presentation/impress.js'},
-              { src: 'components/impress.js/css/impress-demo.css', dest: 'dist/presentation/impress-demo.css'}
+              { src: 'components/impress.js/css/impress-demo.css', dest: 'dist/presentation/impress-demo.css'},
+              { src: 'Seminararbeit-FabianRaetz.pdf', dest: 'dist/Seminararbeit-FabianRaetz.pdf'}
             ]
           }
         },
