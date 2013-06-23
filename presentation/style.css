@@ -1,0 +1,54 @@
+#agenda ul {
+	list-style: disc;
+	padding-left: 40px;
+}
+
+#agenda > ul { margin: 30px 0; }
+
+pre { font-size: 0.8em; }
+
+.rect {
+	width: 200px;
+	height: 200px;
+
+	background-color: #FF6600;
+}
+
+.scale { 
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5); 
+}
+
+.rotate {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); 
+}
+
+.transition {
+    -moz-transition: all 10s ease-in-out;
+    -o-transition: all 10s ease-in-out;
+    -webkit-transition: all 10s ease-in-out;
+    transition: all 10s ease-in-out;
+}
+
+.transition-actions {
+    -moz-transform: translateX(800px) rotate(135deg)
+    -ms-transform: translateX(800px) rotate(135deg);
+    -o-transform: translateX(800px) rotate(135deg);
+    -webkit-transform: translateX(800px) rotate(135deg);
+    transform: translateX(800px) rotate(135deg); 
+}
+
+.step table td {
+	padding: 20px;
+	vertical-align: middle;
+}
+
+
+

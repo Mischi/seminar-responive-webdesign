@@ -15,10 +15,10 @@ is coming soon....
 gem update --system && gem install compass
 ```
 
-* Install [GRUNT](http://gruntjs.com/)
+* Install [GRUNT](http://gruntjs.com/) and [bower](http://bower.io/)
 
 ```
-npm install -g grunt-cli
+npm install -g grunt-cli bower
 ```
 
 * Clone Repository
@@ -32,12 +32,26 @@ git clone git@github.com:Mischi/seminar-responive-webdesign.git
 ```
 cd seminar-responive-webdesign
 npm install
+bower install
 ```
 
 That was easy, huh xD
 Now start the webserver and open your browser at http://localhost:9001
 
 ```
-grunt
+grunt webserver
+open http://localhost:9002
+```
+
+* Start Developement Server
+
+```
+grunt watch
 open http://localhost:9001
+```
+
+* Make a release
+
+```
+grunt package
 ```

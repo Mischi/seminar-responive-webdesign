@@ -19,7 +19,10 @@ module.exports = function (grunt) {
             files: [ 
               { src: 'index.html', dest: 'dist/' },
               { src: 'images/*', dest: 'dist/', filter: 'isFile' },
-              { src: 'robots.txt', dest: 'dist/' }
+              { src: 'robots.txt', dest: 'dist/' },
+              { src: 'presentation/*', dest: 'dist/'},
+              { src: 'components/impress.js/js/impress.js', dest: 'dist/presentation/impress.js'},
+              { src: 'components/impress.js/css/impress-demo.css', dest: 'dist/presentation/impress-demo.css'}
             ]
           }
         },
@@ -72,7 +75,7 @@ module.exports = function (grunt) {
         },
 
         usemin: {
-          html: ['dist/index.html'],
+          html: ['dist/index.html', 'dist/presentation/index.html'],
           options: {
             dirs: ['dist']
           }
