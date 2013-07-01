@@ -1,1 +1,0 @@
-Deploy this folder on any Webserver to run the presentation and the demo.
