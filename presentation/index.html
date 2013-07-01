@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <title>Seminararbeit CSS Transformation und Animation | by Fabian Raetz</title>
+    
+    <meta name="author" content="Fabian Raetz" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+	<link rel="stylesheet" href="impress-demo.css">
+
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body class="impress-not-supported">
+	<!--
+	    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+	-->
+	<div class="fallback-message">
+	    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+	    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+	</div>
+
+	<div id="impress">
+
+	    <div id="start" class="step slide" data-x="-1000" data-y="-1500">
+    		<br><br><br><br><br><br>
+    		<h1>CSS Animation und Transformation</h1>
+    		<h2>Seminar Response Webdesign</h2>
+
+			<br><br><br><br><br><br>
+    		<p>by Fabian Raetz</p>
+		</div>
+
+	    <div id="agenda" class="step slide" data-x="0" data-y="-1500">
+    		<h1>Agenda</h1>
+    		<ul>
+    			<li>CSS Module
+					<ul>
+						<li>CSS Transformation</li>
+						<li>CSS Transition</li>
+						<li>CSS Animation</li>
+					</ul>
+    			</li>
+				<li>Demo				
+					<ul>
+						<li>Scenario</li>
+						<li>Desktop</li>
+						<li>Mobile</li>
+					</ul>
+				</li>
+    		</ul>
+		</div>
+	
+	    <div id="tranform" class="step" data-x="0" data-y="0" data-scale="4">
+	    	<p>Mithilfe von <strong>CSS Transformationen</strong> können (Html-) Elemente in einem zwei und drei dimensionalen Koordinatensystem <strong>verschoben</strong>, <strong>gedreht</strong>, <strong>skaliert</strong> und <strong>geschert</strong> werden. </p>
+		</div>
+
+		<div id="transform-base" class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
+	        <table>
+	        	<tr>
+					<td>
+				        <div class="rect"></div>
+					</td>
+					<td>
+						<pre>
+width: 200px;
+height: 200px;
+background-color: #FF6600;
+						</pre>
+					</td>
+	        	</tr>
+	        </table>
+    	</div>
+
+		<div id="transform-scale" class="step" data-x="-1000" data-y="3000" data-rotate="180">
+	        <table>
+	        	<tr>
+					<td>
+						<div class="rect scale"></div>
+					</td>
+					<td>
+						<pre>
+transform: scale(0.5);
+						</pre>
+					</td>
+	        	</tr>
+	        </table>
+    	</div>
+
+	<div id="transform-rotate" class="step" data-x="-2000" data-y="3000" data-rotate="180">
+		        <table>
+		        	<tr>
+						<td>
+							<div class="rect rotate"></div>
+						</td>
+						<td>
+							<pre>
+	transform: rotate(45deg);
+							</pre>
+						</td>
+		        	</tr>
+		        </table>
+		</div>
+
+		<div id="transform-skew" class="step" data-x="-2000" data-y="3000" data-rotate="180">
+		        <table>
+		        	<tr>
+						<td>
+							<div class="rect rotate"></div>
+						</td>
+						<td>
+							<pre>
+	transform: rotate(45deg);
+							</pre>
+						</td>
+		        	</tr>
+		        </table>
+		</div>
+
+		<div id="transition" class="step" data-x="4000" data-y="0" data-scale="4">
+			<p>Mithilfe von <strong>CSS Transitions</strong> können Änderungen von CSS Eigenschaften über eine definierte <strong>Zeitspanne</strong> von Zustand A nach Zustand B erfolgen</p>
+		</div>
+
+		<div id="transition-demo" class="step" data-x="4000" data-y="-2000" data-scale="3">
+			<div id="transition-demo-elem" class="rect transition"></div>
+			<br /><br />
+			<pre>
+transition: all 10s ease-in-out;
+transform: translateX(800px) rotate(135deg); 
+			</pre>
+		</div>
+
+		<div id="transition-color" class="step" data-x="4000" data-y="-4000" data-scale="3">
+			<div id="transition-color-elem" class="rect transition-color"></div>
+			<br /><br />
+			<pre>
+transition: background-color 5s linear;
+background-color: blue;
+			</pre>
+		</div>
+
+		<div id="animation" class="step" data-x="0" data-y="-4000" data-scale="2" data-rotate="270">
+			<p>Mittels <strong>CSS Animations</strong> lassen sich wie mit Transitions, Animation erstellen. Diese basieren jedoch auf <strong>Keyframes</strong> und sind <strong>explizit!</strong></p>
+		</div>
+
+		<div id="animation-demo1" class="step" data-x="-2000" data-y="-5000" data-scale="4" data-rotate="270">
+			<div id="animation-demo-elem" class="rect animation-rotateTo"></div>
+			<br /><br />
+			<table style="font-size: 0.7em">
+				<tr>
+					<td><pre>
+@keyframes rotateTo {
+  to {
+    transform: translateX(800px) 
+    		   rotate(360deg); 
+  }
+}
+					</pre></td>
+					<td><pre>
+#elem {
+  animation-name: rotateTo;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+					</pre></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="animation-demo2" class="step" data-x="-6000" data-y="-5000" data-scale="4" data-rotate="270">
+			<div id="animation-demo-elem" class="rect animation-rotateToRectMove"></div>
+			<br /><br />
+<pre style="font-size: 0.6em">
+@keyframes rotateToRectMove {
+  20% { transform: translateY(100px) rotate(90deg); }
+  80% { transform: translateX(700px) translateY(100px) rotate(270deg); }
+  100% {transform: translateX(700px) rotate(360deg); }
+}
+</pre>
+		</div>
+
+
+
+		<div id="demo" class=" slide step" data-x="-2500" data-y="-1500">
+			<br><br><br><br><br><br>
+			<h1>Demo</h1>
+			<h2>Brockhaus AG Labs - Remake</h2>
+		</div>
+
+		<div id="demo-startseite" class="step img" data-x="-2500" data-y="-500">
+			<table>
+				<tr>
+					<td class="desktop"></td>
+					<td class="mobile"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="demo-menu" class="step img" data-x="-2500" data-y="500">
+			<table>
+				<tr>
+					<td class="mobile mobilebig"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="demo-über" class="step img" data-x="-2500" data-y="1500">
+			<table>
+				<tr>
+					<td class="desktop"></td>
+					<td class="mobile"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="demo-ziele" class="step img" data-x="-4500" data-y="-500">
+			<table>
+				<tr>
+					<td class="desktop"></td>
+					<td class="mobile"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="demo-wirsuchen" class="step img" data-x="-4500" data-y="500">
+			<table>
+				<tr>
+					<td class="desktop"></td>
+					<td class="mobile"></td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div id="demo-startseite-live" class=" slide step" data-x="-4500" data-y="1500">
+			<br><br><br><br><br><br>
+			<h1>Live Demo</h1>
+			<h2>Animation Startseite</h2>
+		</div>
+
+		<div id="qa" class="step" data-x="-4500" data-y="2500">
+			
+			<h1 style="font-size:3em">Q & A</h1>
+		</div>
+
+		<div id="thx" class="step" data-x="8000" data-y="9500" data-scale="20" data-rotate="90">
+			<br><br><br><br><br><br>
+			<h1 style="font-size:3em">Vielen dank!<h1>
+		</div>
+
+	<script src="impress.js"></script>
+
+	<script>impress().init();</script>
+	<script type="text/javascript">
+		document.addEventListener("impress:stepenter", function (event) {
+			var id = event.srcElement.id;
+			function addClass(i, s, c) {
+				if(id == i) document.querySelector(s).classList.toggle(c);
+			};
+
+			addClass('transition-demo', '#transition-demo-elem', 'transition-actions');
+			addClass('transition-color', '#transition-color-elem', 'transition-color-actions');
+        }, false);
+	</script>
+</body>
+</html>
